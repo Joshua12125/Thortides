@@ -1,0 +1,1193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Thortides delivers 99%+ purity research peptides with third-party COA verification, fast US shipping, and outstanding customer support. For research use only."/>
+  <title>Thortides | High-Purity Research Peptides — 99%+ Pure, 3rd Party Tested</title>
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0B1F3A;
+      --navy2:   #0F2847;
+      --navy3:   #132F52;
+      --teal:    #00A99D;
+      --teal2:   #00BFB3;
+      --white:   #FFFFFF;
+      --offwhite:#F4F8FB;
+      --muted:   #6B8BA4;
+      --faint:   #A0B8CC;
+      --border:  #1A3A5C;
+      --dark:    #061525;
+      --gold:    #F0C040;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--white);
+      color: var(--navy);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+
+    /* ── ANNOUNCEMENT BAR ───────────────────────────── */
+    .ann-bar {
+      background: var(--teal);
+      text-align: center;
+      padding: 10px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .ann-sep { opacity: 0.5; }
+
+    /* ── NAV ────────────────────────────────────────── */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: var(--navy);
+      padding: 0 6vw;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 74px;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.35);
+    }
+
+    .nav-logo img {
+      height: 52px;
+      width: auto;
+      object-fit: contain;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--faint);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--white); }
+
+    .nav-cta {
+      background: var(--teal) !important;
+      color: var(--white) !important;
+      padding: 10px 24px;
+      font-weight: 700 !important;
+      border-radius: 4px;
+      transition: background 0.2s !important;
+    }
+    .nav-cta:hover { background: var(--teal2) !important; color: var(--white) !important; }
+
+    .nav-mobile-cta {
+      display: none;
+      background: var(--teal);
+      color: var(--white);
+      padding: 9px 18px;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 4px;
+    }
+
+    /* ── HERO ───────────────────────────────────────── */
+    .hero {
+      background: var(--navy);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-banner {
+      width: 100%;
+      display: block;
+      max-height: 600px;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(11,31,58,0.85) 0%, rgba(11,31,58,0.3) 60%, transparent 100%);
+      display: flex;
+      align-items: center;
+      padding: 0 6vw;
+    }
+
+    .hero-content {
+      max-width: 600px;
+      z-index: 1;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(0,169,157,0.2);
+      border: 1px solid rgba(0,169,157,0.4);
+      color: var(--teal2);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 24px;
+    }
+
+    .hero-headline {
+      font-size: clamp(32px, 5vw, 64px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.08;
+      margin-bottom: 20px;
+      letter-spacing: -0.02em;
+    }
+    .hero-headline .hl { color: var(--teal); }
+
+    .hero-sub {
+      font-size: clamp(14px, 1.4vw, 17px);
+      color: var(--faint);
+      line-height: 1.8;
+      margin-bottom: 36px;
+      font-weight: 300;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--teal);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 34px;
+      border-radius: 4px;
+      transition: background 0.2s, transform 0.15s;
+    }
+    .btn-primary:hover { background: var(--teal2); transform: translateY(-2px); }
+
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: transparent;
+      color: var(--white);
+      font-weight: 600;
+      font-size: 15px;
+      padding: 14px 34px;
+      border-radius: 4px;
+      border: 2px solid rgba(255,255,255,0.3);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--teal); color: var(--teal); }
+
+    /* fallback when no banner image */
+    .hero-fallback {
+      padding: 120px 6vw 100px;
+    }
+
+    /* ── TRUST BAR ──────────────────────────────────── */
+    .trust-bar {
+      background: var(--dark);
+      padding: 18px 6vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 48px;
+      flex-wrap: wrap;
+      border-bottom: 1px solid var(--border);
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--faint);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    .trust-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--teal);
+      flex-shrink: 0;
+    }
+
+    /* ── SHARED SECTION ─────────────────────────────── */
+    .section { padding: 96px 6vw; }
+    .section-dark { background: var(--navy); }
+    .section-light { background: var(--offwhite); }
+    .section-white { background: var(--white); }
+
+    .eyebrow {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 14px;
+    }
+
+    .section-h {
+      font-size: clamp(26px, 4vw, 46px);
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 18px;
+      letter-spacing: -0.02em;
+      color: var(--navy);
+    }
+    .section-dark .section-h { color: var(--white); }
+    .section-dark .eyebrow { color: var(--teal2); }
+    .hl { color: var(--teal); }
+
+    .section-lead {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.75;
+      max-width: 620px;
+      font-weight: 300;
+    }
+    .section-dark .section-lead { color: var(--faint); }
+
+    /* ── WHY THORTIDES ──────────────────────────────── */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 56px;
+    }
+
+    .why-card {
+      background: var(--white);
+      padding: 40px 32px;
+      border: 1px solid #E0EAF2;
+      border-radius: 10px;
+      transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+    }
+    .why-card:hover {
+      border-color: var(--teal);
+      box-shadow: 0 8px 32px rgba(0,169,157,0.1);
+      transform: translateY(-4px);
+    }
+
+    .why-img {
+      width: 56px;
+      height: 56px;
+      object-fit: contain;
+      margin-bottom: 20px;
+    }
+
+    .why-title {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 12px;
+    }
+    .why-body {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-weight: 300;
+    }
+
+    /* ── QUALITY STATS ──────────────────────────────── */
+    .quality-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+      margin-top: 56px;
+    }
+
+    .quality-points {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      margin-top: 28px;
+    }
+    .quality-point {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .q-check {
+      width: 28px; height: 28px;
+      background: rgba(0,169,157,0.12);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      flex-shrink: 0;
+      margin-top: 3px;
+      color: var(--teal);
+      font-weight: 700;
+    }
+    .q-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .q-body {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    .stat-boxes {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+    .stat-box {
+      background: var(--navy);
+      padding: 26px 30px;
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      border-left: 4px solid var(--teal);
+      transition: border-color 0.2s;
+    }
+    .stat-box:hover { border-color: var(--teal2); }
+    .sb-num {
+      font-size: 34px;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1;
+      flex-shrink: 0;
+      min-width: 90px;
+    }
+    .sb-num span { color: var(--teal); }
+    .sb-label {
+      font-size: 13px;
+      color: var(--faint);
+      line-height: 1.5;
+      font-weight: 300;
+    }
+
+    /* ── PROCESS ────────────────────────────────────── */
+    .process-wrap {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: 56px;
+    }
+
+    .process-step {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      padding: 36px 28px;
+      text-align: center;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .process-step:hover { background: rgba(0,169,157,0.07); border-color: var(--teal); }
+
+    .step-num-circle {
+      width: 56px; height: 56px;
+      border: 2px solid var(--teal);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--teal);
+      margin: 0 auto 18px;
+    }
+
+    .step-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+    .step-body {
+      font-size: 13px;
+      color: var(--faint);
+      line-height: 1.65;
+      font-weight: 300;
+    }
+
+    /* ── REVIEWS ────────────────────────────────────── */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 56px;
+    }
+
+    .review-card {
+      background: var(--white);
+      border: 1px solid #E0EAF2;
+      border-radius: 10px;
+      padding: 30px;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+    .review-card:hover {
+      box-shadow: 0 8px 28px rgba(11,31,58,0.1);
+      transform: translateY(-3px);
+    }
+
+    .stars { color: var(--gold); font-size: 17px; letter-spacing: 2px; margin-bottom: 14px; }
+
+    .review-text {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.75;
+      font-weight: 300;
+      margin-bottom: 18px;
+      font-style: italic;
+    }
+
+    .review-author { display: flex; align-items: center; gap: 12px; }
+    .review-av {
+      width: 38px; height: 38px;
+      border-radius: 50%;
+      background: var(--navy);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--teal);
+      flex-shrink: 0;
+    }
+    .review-name { font-size: 14px; font-weight: 700; color: var(--navy); }
+    .review-tag { font-size: 11px; color: var(--teal); font-weight: 600; }
+
+    /* ── FAQ ────────────────────────────────────────── */
+    .faq-list {
+      max-width: 800px;
+      margin: 56px auto 0;
+    }
+
+    .faq-item {
+      border: 1px solid #E0EAF2;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 10px;
+      transition: border-color 0.2s;
+    }
+    .faq-item.open { border-color: var(--teal); }
+
+    .faq-q {
+      padding: 20px 26px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      user-select: none;
+      color: var(--navy);
+      background: var(--white);
+    }
+    .faq-q:hover { color: var(--teal); }
+
+    .faq-chevron {
+      font-size: 20px;
+      color: var(--muted);
+      flex-shrink: 0;
+      transition: transform 0.3s;
+    }
+    .faq-item.open .faq-chevron { transform: rotate(180deg); color: var(--teal); }
+
+    .faq-a {
+      display: none;
+      padding: 0 26px 20px;
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.8;
+      font-weight: 300;
+      background: var(--white);
+    }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ── CTA BANNER ─────────────────────────────────── */
+    .cta-banner {
+      background: var(--teal);
+      padding: 72px 6vw;
+    }
+    .cta-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    .cta-banner h2 {
+      font-size: clamp(24px, 3.5vw, 40px);
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+    .cta-banner p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.8);
+      margin-top: 10px;
+      font-weight: 300;
+    }
+    .btn-white {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--white);
+      color: var(--teal);
+      font-weight: 800;
+      font-size: 15px;
+      padding: 16px 40px;
+      border-radius: 4px;
+      transition: opacity 0.2s, transform 0.15s;
+      white-space: nowrap;
+    }
+    .btn-white:hover { opacity: 0.92; transform: translateY(-2px); }
+
+    /* ── CONTACT ─────────────────────────────────────── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      margin-top: 56px;
+    }
+
+    .contact-info { display: flex; flex-direction: column; gap: 22px; }
+
+    .contact-item { display: flex; gap: 14px; align-items: flex-start; }
+    .contact-icon-box {
+      width: 42px; height: 42px;
+      background: rgba(0,169,157,0.1);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 17px;
+      flex-shrink: 0;
+    }
+    .c-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 3px;
+    }
+    .c-val { font-size: 15px; font-weight: 600; color: var(--navy); }
+
+    .hours-box {
+      background: var(--offwhite);
+      border-radius: 10px;
+      padding: 22px 26px;
+      border-left: 4px solid var(--teal);
+      margin-top: 4px;
+    }
+    .hours-title { font-size: 13px; font-weight: 700; color: var(--navy); margin-bottom: 8px; }
+    .hours-box p { font-size: 13px; color: var(--muted); font-weight: 300; line-height: 1.8; }
+
+    .contact-form { display: flex; flex-direction: column; gap: 14px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-field { display: flex; flex-direction: column; gap: 6px; }
+    .form-label { font-size: 12px; font-weight: 700; color: var(--navy); letter-spacing: 0.06em; text-transform: uppercase; }
+    .form-input, .form-select, .form-textarea {
+      background: var(--offwhite);
+      border: 2px solid #E0EAF2;
+      color: var(--navy);
+      font-family: inherit;
+      font-size: 14px;
+      padding: 12px 16px;
+      outline: none;
+      border-radius: 6px;
+      transition: border-color 0.2s;
+      width: 100%;
+    }
+    .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--teal); }
+    .form-textarea { resize: vertical; min-height: 120px; }
+    .form-note { font-size: 12px; color: var(--muted); line-height: 1.6; }
+
+    /* ── FOOTER ─────────────────────────────────────── */
+    footer {
+      background: var(--dark);
+      padding: 64px 6vw 32px;
+      border-top: 3px solid var(--teal);
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 260px 1fr 1fr 1fr;
+      gap: 48px;
+      margin-bottom: 48px;
+    }
+
+    .footer-logo-img { height: 44px; width: auto; object-fit: contain; margin-bottom: 16px; }
+
+    .footer-tagline { font-size: 13px; color: var(--faint); line-height: 1.7; font-weight: 300; margin-bottom: 16px; }
+    .footer-phone { font-size: 13px; color: var(--faint); }
+
+    .footer-col-title {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 18px;
+    }
+    .footer-col-links { display: flex; flex-direction: column; gap: 10px; list-style: none; }
+    .footer-col-links a { font-size: 13px; color: var(--faint); transition: color 0.2s; font-weight: 300; }
+    .footer-col-links a:hover { color: var(--teal); }
+
+    .footer-divider { border: none; border-top: 1px solid var(--border); margin-bottom: 24px; }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+    .footer-legal { font-size: 11.5px; color: #3A5570; line-height: 1.65; max-width: 680px; font-weight: 300; }
+    .footer-copy { font-size: 12px; color: #2A3A4A; }
+
+    .credit-cards-img { height: 28px; width: auto; margin-top: 12px; }
+
+    /* ── RESPONSIVE ─────────────────────────────────── */
+    @media (max-width: 1000px) {
+      .why-grid { grid-template-columns: 1fr 1fr; }
+      .process-wrap { grid-template-columns: 1fr 1fr; }
+      .quality-grid { grid-template-columns: 1fr; gap: 48px; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 760px) {
+      .reviews-grid { grid-template-columns: 1fr 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .hero-overlay { position: relative; background: var(--navy); padding: 60px 5vw; }
+      .hero-banner { display: none; }
+      .nav-links { display: none; }
+      .nav-mobile-cta { display: block; }
+      .trust-bar { gap: 20px; }
+    }
+    @media (max-width: 560px) {
+      .why-grid { grid-template-columns: 1fr; }
+      .process-wrap { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 32px; }
+      .form-row { grid-template-columns: 1fr; }
+      .ann-bar { gap: 10px; font-size: 11px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ANN BAR -->
+<div class="ann-bar">
+  🚚 Free shipping on orders over $100
+  <span class="ann-sep">|</span>
+  📞 Text for sales: +1 (813) 703-2814
+  <span class="ann-sep">|</span>
+  🧬 Best Quality Compounds on the Market!
+</div>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="https://thortides.com" target="_blank" class="nav-logo">
+    <img src="https://thortides.com/wp-content/uploads/2026/05/ChatGPT-Image-May-16-2026-06_45_59-PM.png" alt="Thortides" onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"/>
+    <span style="display:none; font-size:24px; font-weight:800; color:#fff;">Thor<span style="color:#00A99D;">tides</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#quality">Quality</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#faq">FAQ</a></li>
+    <li><a href="#contact">Contact</a></li>
+    <li><a href="https://thortides.com/shop/" target="_blank" class="nav-cta">Shop Now →</a></li>
+  </ul>
+  <a href="https://thortides.com/shop/" target="_blank" class="nav-mobile-cta">Shop Now →</a>
+</nav>
+
+<!-- ══ HERO ══════════════════════════════════════════ -->
+<section class="hero">
+  <img
+    class="hero-banner"
+    src="https://thortides.com/wp-content/uploads/2026/05/Website-banner-final.png"
+    alt="Thortides — High Quality Peptides"
+    onerror="this.style.display='none'"
+  />
+  <div class="hero-overlay">
+    <div class="hero-content">
+      <div class="hero-tag">High-Quality · 99% Pure · 3rd Party Tested</div>
+      <h1 class="hero-headline">
+        The <span class="hl">Highest Purity</span><br>
+        Peptides on the Market
+      </h1>
+      <p class="hero-sub">
+        Thortides delivers independently verified, 99%+ pure research peptides with full COA documentation, fast US shipping, and customer support that actually knows the science.
+      </p>
+      <div class="hero-actions">
+        <a href="https://thortides.com/shop/" target="_blank" class="btn-primary">Shop All Peptides →</a>
+        <a href="#why" class="btn-secondary">Our Standards</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ TRUST BAR ═════════════════════════════════════ -->
+<div class="trust-bar">
+  <div class="trust-item"><div class="trust-dot"></div> High Purity Compounds</div>
+  <div class="trust-item"><div class="trust-dot"></div> COA on Every Product</div>
+  <div class="trust-item"><div class="trust-dot"></div> 100% Secure Checkout</div>
+  <div class="trust-item"><div class="trust-dot"></div> Free Shipping Over $100</div>
+  <div class="trust-item"><div class="trust-dot"></div> US-Based Support</div>
+</div>
+
+<!-- ══ WHY THORTIDES ═════════════════════════════════ -->
+<section class="section section-light" id="why">
+  <div class="eyebrow">Why Thortides</div>
+  <h2 class="section-h">We Don't Just Sell Peptides.<br>We <span class="hl">Stand Behind</span> Every Vial.</h2>
+  <p class="section-lead">Thortides was built on one conviction: researchers deserve a supplier they can trust without question. That means real purity numbers, real documentation, and real support — every time.</p>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <img class="why-img" src="https://thortides.com/wp-content/uploads/2022/08/light-bulb-outlined-hand-drawn-tool.png" alt="Highest Purity" onerror="this.style.display='none'"/>
+      <div class="why-title">Highest Purity</div>
+      <p class="why-body">Every compound we stock is 99% purity or higher, verified by independent third-party laboratories. We publish full COA documentation directly on each product page so you can confirm results before you buy — no account required.</p>
+    </div>
+    <div class="why-card">
+      <img class="why-img" src="https://thortides.com/wp-content/uploads/2022/08/chatting-speech-bubbles-hand-drawn-bubbles-couple.png" alt="Outstanding Support" onerror="this.style.display='none'"/>
+      <div class="why-title">Outstanding Support</div>
+      <p class="why-body">Our customer support is second to none — users rave about how we don't rest until every issue is solved to their complete satisfaction. Our team knows the science and gives you real answers, not scripted responses.</p>
+    </div>
+    <div class="why-card">
+      <img class="why-img" src="https://thortides.com/wp-content/uploads/2022/08/shopping-cart-sketch.png" alt="Secure Checkout" onerror="this.style.display='none'"/>
+      <div class="why-title">Secure Checkout</div>
+      <p class="why-body">With 128-bit SSL security and advanced encryption, every transaction on Thortides is fully protected. We accept PayPal, MasterCard, and Visa. Your payment information is safe from checkout through delivery.</p>
+    </div>
+    <div class="why-card">
+      <img class="why-img" src="https://thortides.com/wp-content/uploads/2022/08/light-bulb-outlined-hand-drawn-tool.png" alt="COA Documentation" onerror="this.style.display='none'"/>
+      <div class="why-title">Full COA Documentation</div>
+      <p class="why-body">Certificate of Analysis documents are available on every single product page — no purchase necessary. Real analytical data, real results, real transparency. We believe you deserve to know exactly what you are receiving.</p>
+    </div>
+    <div class="why-card">
+      <img class="why-img" src="https://thortides.com/wp-content/uploads/2022/08/shopping-cart-sketch.png" alt="Fast Shipping" onerror="this.style.display='none'"/>
+      <div class="why-title">Fast US Shipping</div>
+      <p class="why-body">Orders are processed and dispatched within 24 hours from our Brandon, Florida facility. Free shipping on all orders over $100. Every shipment is carefully packaged to maintain compound integrity from warehouse to lab.</p>
+    </div>
+    <div class="why-card">
+      <img class="why-img" src="https://thortides.com/wp-content/uploads/2022/08/chatting-speech-bubbles-hand-drawn-bubbles-couple.png" alt="US Based" onerror="this.style.display='none'"/>
+      <div class="why-title">US-Based Operations</div>
+      <p class="why-body">Thortides is a Florida-based company with a real address, a real phone number, and a team you can actually reach. We are not an anonymous reseller. When you order from us, you know exactly who you are buying from.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ QUALITY PROMISE ═══════════════════════════════ -->
+<section class="section section-white" id="quality">
+  <div class="quality-grid">
+    <div>
+      <div class="eyebrow">Quality Promise</div>
+      <h2 class="section-h">The Standard We<br><span class="hl">Never Compromise</span></h2>
+      <p class="section-lead">At Thortides, quality is not a marketing claim — it is a documented, verifiable commitment backed by real analytical data on every product we sell.</p>
+      <div class="quality-points">
+        <div class="quality-point">
+          <div class="q-check">✓</div>
+          <div>
+            <div class="q-title">Independent Third-Party Testing</div>
+            <p class="q-body">Every purity result comes from an independent accredited laboratory with no financial stake in the outcome — structural independence, not just a different person in our organization.</p>
+          </div>
+        </div>
+        <div class="quality-point">
+          <div class="q-check">✓</div>
+          <div>
+            <div class="q-title">COA on Every Product Page</div>
+            <p class="q-body">Certificate of Analysis documents are publicly available on each product page — raw data, not just pass/fail summaries. Review it before you buy, no account required.</p>
+          </div>
+        </div>
+        <div class="quality-point">
+          <div class="q-check">✓</div>
+          <div>
+            <div class="q-title">Batch-Level Traceability</div>
+            <p class="q-body">Every vial shipped corresponds to a documented batch with full chain-of-custody records from synthesis to your door. Complete accountability at every step.</p>
+          </div>
+        </div>
+        <div class="quality-point">
+          <div class="q-check">✓</div>
+          <div>
+            <div class="q-title">Integrity-First Packaging</div>
+            <p class="q-body">Compounds are packed using materials selected to maintain stability, with appropriate options for temperature-sensitive peptides and careful handling throughout dispatch.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="stat-boxes">
+      <div class="stat-box">
+        <div class="sb-num">99<span>%+</span></div>
+        <div class="sb-label">Minimum verified purity on every compound confirmed by independent HPLC analysis</div>
+      </div>
+      <div class="stat-box">
+        <div class="sb-num">100<span>%</span></div>
+        <div class="sb-label">Of our active catalog has publicly accessible COA documentation — no exceptions</div>
+      </div>
+      <div class="stat-box">
+        <div class="sb-num">&lt;<span>24h</span></div>
+        <div class="sb-label">Average order processing time from placement to dispatch from our Florida facility</div>
+      </div>
+      <div class="stat-box">
+        <div class="sb-num">128<span>bit</span></div>
+        <div class="sb-label">SSL encryption protecting every transaction through our secure checkout system</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ PROCESS ════════════════════════════════════════ -->
+<section class="section section-dark" id="process">
+  <div class="eyebrow">Our Process</div>
+  <h2 class="section-h">From Synthesis to Your Lab —<br>Every Step <span class="hl">Verified</span></h2>
+  <p class="section-lead">We don't rely on supplier assurances. Every compound goes through a documented multi-step verification process before it ever ships to a researcher.</p>
+
+  <div class="process-wrap">
+    <div class="process-step">
+      <div class="step-num-circle">01</div>
+      <div class="step-title">Controlled Sourcing</div>
+      <p class="step-body">We source exclusively from vetted synthesis partners with documented quality management systems and verified track records of consistent output.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num-circle">02</div>
+      <div class="step-title">HPLC Purity Analysis</div>
+      <p class="step-body">Every batch undergoes High-Performance Liquid Chromatography to confirm 99%+ purity with full chromatographic data — results reported as actual numbers, not pass/fail.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num-circle">03</div>
+      <div class="step-title">Identity Verification</div>
+      <p class="step-body">Mass spectrometry confirms the molecular identity of every compound — ensuring you receive exactly what you ordered, not a structurally similar substitute.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num-circle">04</div>
+      <div class="step-title">COA Published</div>
+      <p class="step-body">Full Certificate of Analysis is published directly on the product page — accessible to anyone before any purchase, with all raw analytical values included.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ══ REVIEWS ════════════════════════════════════════ -->
+<section class="section section-light" id="reviews">
+  <div class="eyebrow">Customer Reviews</div>
+  <h2 class="section-h">Researchers Who <span class="hl">Trust Thortides</span></h2>
+  <p class="section-lead">Real feedback from verified customers who rely on Thortides for their research needs.</p>
+
+  <div class="reviews-grid">
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Absolutely love this company! Ordering products and receiving them is flawless and extremely quick every time. I will continue to use this company always. Turned most of my friends and family on to this company as well."</p>
+      <div class="review-author">
+        <div class="review-av">S</div>
+        <div>
+          <div class="review-name">Sandra C.</div>
+          <div class="review-tag">✓ Verified Customer</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Quality products! Fast delivery. Friendly customer support. The lab team appreciates their professionalism and responsiveness. Every order has arrived in perfect condition — exactly as described."</p>
+      <div class="review-author">
+        <div class="review-av">M</div>
+        <div>
+          <div class="review-name">Michael R.</div>
+          <div class="review-tag">✓ Verified Customer</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Fast ordering and delivery. I've already placed multiple orders — the process is seamless from start to finish. Very professional and trustworthy. Customer service actually knows what they're talking about."</p>
+      <div class="review-author">
+        <div class="review-av">J</div>
+        <div>
+          <div class="review-name">James T.</div>
+          <div class="review-tag">✓ Verified Customer</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"The COA documentation is exactly what our lab needs. Real analytical data, not just claims. Purity numbers are consistently above stated values. Thortides is now our go-to supplier for research compounds."</p>
+      <div class="review-author">
+        <div class="review-av">D</div>
+        <div>
+          <div class="review-name">Dr. D. Patel</div>
+          <div class="review-tag">✓ Verified Customer</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Thortides has wonderful and quick customer service. My orders have arrived in a timely manner with no issues at all. The packaging is always secure and compounds arrive in perfect condition every time."</p>
+      <div class="review-author">
+        <div class="review-av">A</div>
+        <div>
+          <div class="review-name">Ashley K.</div>
+          <div class="review-tag">✓ Verified Customer</div>
+        </div>
+      </div>
+    </div>
+    <div class="review-card">
+      <div class="stars">★★★★★</div>
+      <p class="review-text">"Very fast shipping and free on orders over $100. Quality is great, prices are competitive, and their support team is genuinely knowledgeable. A+ service every single time I've ordered from them."</p>
+      <div class="review-author">
+        <div class="review-av">R</div>
+        <div>
+          <div class="review-name">Robert L.</div>
+          <div class="review-tag">✓ Verified Customer</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FAQ ════════════════════════════════════════════ -->
+<section class="section section-white" id="faq">
+  <div style="text-align:center;">
+    <div class="eyebrow" style="justify-content:center;">Frequently Asked Questions</div>
+    <h2 class="section-h" style="text-align:center;">Questions We Get <span class="hl">Most Often</span></h2>
+    <p class="section-lead" style="margin:0 auto; text-align:center;">Everything you need to know about our products, quality, and process.</p>
+  </div>
+
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>What does "3rd party tested" mean at Thortides?</span>
+        <span class="faq-chevron">▾</span>
+      </div>
+      <div class="faq-a">It means every compound we stock is tested by an independent accredited analytical laboratory — one with no financial relationship with Thortides beyond the testing fee. They have no incentive to produce a favorable result. Their analysis confirms both purity and molecular identity of every batch. We then publish those results directly on each product page as a Certificate of Analysis, so you can review the actual data before you buy.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Where can I find the COA for a product?</span>
+        <span class="faq-chevron">▾</span>
+      </div>
+      <div class="faq-a">Every product page on thortides.com includes a link to the Certificate of Analysis for that compound. No account creation is required and no purchase history is needed. You can review the full analytical documentation — including purity percentage and identity confirmation — before placing any order. If you have questions about interpreting the COA data, our support team is available to help.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>How long does shipping take and is it free?</span>
+        <span class="faq-chevron">▾</span>
+      </div>
+      <div class="faq-a">Orders are processed and dispatched within 24 hours from our Brandon, Florida facility. Delivery typically takes 2–5 business days depending on your location within the US. Free shipping is available on all orders over $100. All shipments are carefully packaged to maintain compound integrity during transit.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>What payment methods do you accept?</span>
+        <span class="faq-chevron">▾</span>
+      </div>
+      <div class="faq-a">We accept PayPal, MasterCard, and Visa. All transactions are secured with 128-bit SSL encryption. Your payment and personal information is fully protected throughout the entire checkout process.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Are your products for human consumption?</span>
+        <span class="faq-chevron">▾</span>
+      </div>
+      <div class="faq-a">No. All products sold by Thortides are strictly for research use only and are not intended for human consumption, therapeutic use, veterinary use, or diagnostic purposes. These products have not been evaluated by the FDA. Purchasers are responsible for compliance with all applicable laws in their jurisdiction.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>How do I reach your support team?</span>
+        <span class="faq-chevron">▾</span>
+      </div>
+      <div class="faq-a">You can reach us by text at +1 (813) 703-2814 for sales inquiries, or through the contact form at thortides.com/contact-us-2. Our customer support hours are Monday through Friday, 9:00 AM to 5:00 PM EST. We are closed on weekends. Every inquiry is handled by a real person who understands our products.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q" onclick="toggleFaq(this)">
+        <span>Do you offer bulk or institutional pricing?</span>
+        <span class="faq-chevron">▾</span>
+      </div>
+      <div class="faq-a">Yes. We work with research institutions, laboratories, and organizations that require larger quantities or recurring orders. Please contact our team directly via text or the contact form to discuss your specific requirements. We can provide information on availability, bulk pricing, and documentation requirements.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ CTA BANNER ═════════════════════════════════════ -->
+<div class="cta-banner">
+  <div class="cta-inner">
+    <div>
+      <h2>Ready to Experience the Thortides Standard?</h2>
+      <p>99%+ purity. Full COA documentation. Fast US shipping. Outstanding support.</p>
+    </div>
+    <a href="https://thortides.com/shop/" target="_blank" class="btn-white">Shop All Peptides →</a>
+  </div>
+</div>
+
+<!-- ══ CONTACT ════════════════════════════════════════ -->
+<section class="section section-white" id="contact">
+  <div class="eyebrow">Get in Touch</div>
+  <h2 class="section-h">Speak With Our <span class="hl">Team</span></h2>
+  <p class="section-lead">Have questions about a product, your order, or our quality documentation? We answer directly — no bots, no runaround.</p>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon-box">📞</div>
+        <div>
+          <div class="c-label">Text for Sales</div>
+          <div class="c-val">+1 (813) 703-2814</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon-box">📧</div>
+        <div>
+          <div class="c-label">Email / Contact Form</div>
+          <div class="c-val">thortides.com/contact-us-2</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon-box">📍</div>
+        <div>
+          <div class="c-label">Address</div>
+          <div class="c-val">504 S Kings Ave, Unit #131<br>Brandon, FL 33511, USA</div>
+        </div>
+      </div>
+      <div class="hours-box">
+        <div class="hours-title">Customer Support Hours</div>
+        <p>Monday – Friday: 9:00 AM – 5:00 PM<br>Saturday – Sunday: Closed</p>
+      </div>
+    </div>
+
+    <div class="contact-form">
+      <div class="form-row">
+        <div class="form-field">
+          <label class="form-label">First Name</label>
+          <input type="text" class="form-input" placeholder="Jane"/>
+        </div>
+        <div class="form-field">
+          <label class="form-label">Last Name</label>
+          <input type="text" class="form-input" placeholder="Smith"/>
+        </div>
+      </div>
+      <div class="form-field">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" placeholder="jane@institution.edu"/>
+      </div>
+      <div class="form-field">
+        <label class="form-label">Inquiry Type</label>
+        <select class="form-select">
+          <option value="">Select an inquiry type</option>
+          <option>Product / COA Question</option>
+          <option>Order Status</option>
+          <option>Bulk / Institutional Order</option>
+          <option>Shipping Question</option>
+          <option>Payment Question</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-field">
+        <label class="form-label">Your Message</label>
+        <textarea class="form-textarea" placeholder="Describe your question or inquiry. Include any product names or order numbers if relevant."></textarea>
+      </div>
+      <p class="form-note">By submitting this form you agree to our Privacy Policy. All information is handled in accordance with applicable data protection regulations.</p>
+      <a href="https://thortides.com/contact-us-2/" target="_blank" class="btn-primary" style="align-self:flex-start;">Submit via thortides.com →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ═════════════════════════════════════════ -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <img class="footer-logo-img"
+        src="https://thortides.com/wp-content/uploads/2026/05/ChatGPT-Image-May-16-2026-06_45_59-PM.png"
+        alt="Thortides"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='block'"/>
+      <div style="display:none; font-size:22px; font-weight:800; color:#fff; margin-bottom:14px;">Thor<span style="color:#00A99D;">tides</span></div>
+      <p class="footer-tagline">High-purity research peptides with third-party COA verification, fast US shipping, and outstanding support. For research use only.</p>
+      <div class="footer-phone">📞 +1 (813) 703-2814</div>
+      <img class="credit-cards-img"
+        src="https://themedemo.commercegurus.com/shoptimizer-demodata/wp-content/uploads/sites/53/2018/05/credit-cards.png"
+        alt="PayPal MasterCard Visa"
+        onerror="this.style.display='none'"/>
+    </div>
+    <div>
+      <div class="footer-col-title">Store</div>
+      <ul class="footer-col-links">
+        <li><a href="https://thortides.com/shop/" target="_blank">Shop All Products</a></li>
+        <li><a href="https://thortides.com/product/semaglutide/" target="_blank">Semaglutide 10mg</a></li>
+        <li><a href="https://thortides.com/product/retatrutide-10mg-2/" target="_blank">Retatrutide 10mg</a></li>
+        <li><a href="https://thortides.com/product/bpc157-tb500-5mg-5mg-2/" target="_blank">BPC157 / TB500</a></li>
+        <li><a href="https://thortides.com/my-account/" target="_blank">My Account</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-col-links">
+        <li><a href="https://thortides.com/" target="_blank">Home</a></li>
+        <li><a href="https://thortides.com/contact-us-2/" target="_blank">Contact Us</a></li>
+        <li><a href="https://thortides.com/shipping-policy/" target="_blank">Shipping Policy</a></li>
+        <li><a href="https://thortides.com/return-refund-policy/" target="_blank">Return & Refund</a></li>
+        <li><a href="https://thortides.com/disclaimer/" target="_blank">Disclaimer</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Legal</div>
+      <ul class="footer-col-links">
+        <li><a href="https://thortides.com/privacy-policy/" target="_blank">Privacy Policy</a></li>
+        <li><a href="https://thortides.com/terms-conditions/" target="_blank">Terms & Conditions</a></li>
+        <li><a href="https://thortides.com/billing-terms-conditions/" target="_blank">Billing Terms</a></li>
+      </ul>
+    </div>
+  </div>
+  <hr class="footer-divider"/>
+  <div class="footer-bottom">
+    <p class="footer-legal">
+      <strong style="color:#3A5570;">For Research Use Only.</strong> All products sold by Thortides LLC are intended exclusively for laboratory research purposes and are not for human consumption, therapeutic use, veterinary use, or diagnostic purposes. These statements have not been evaluated by the Food and Drug Administration. Products are not intended to diagnose, treat, cure, or prevent any disease. Purchasers are responsible for compliance with all applicable laws and regulations in their jurisdiction.
+    </p>
+    <div class="footer-copy">© 2026 Thortides LLC · Brandon, FL</div>
+  </div>
+</footer>
+
+<script>
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Sticky nav active state
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(s => { if (window.scrollY >= s.offsetTop - 90) current = s.id; });
+    navLinks.forEach(a => { a.style.color = a.getAttribute('href') === '#' + current ? '#00A99D' : ''; });
+  });
+</script>
+</body>
+</html>
