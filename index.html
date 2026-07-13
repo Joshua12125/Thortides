@@ -85,18 +85,29 @@
 
     /* ── HERO ─────────────────────────────────────────── */
     .hero {
-      background: var(--dark);
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      min-height: 86vh;
-    }
-    /* LEFT — text panel */
-    .hero-text-panel {
+      position: relative;
+      min-height: 82vh;
       display: flex;
-      flex-direction: column;
-      justify-content: center;
-      padding: 72px 6vw 72px 7vw;
+      align-items: center;
+      overflow: hidden;
+      background: var(--dark);
+      background-image: url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1800&q=85&fit=crop');
+      background-size: cover;
+      background-position: center;
     }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(10,18,28,0.72);
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 1;
+      padding: 80px 7vw;
+      width: 100%;
+    }
+    .hero-text { max-width: 560px; }
     .hero-badge {
       display: inline-block;
       background: var(--teal);
@@ -107,99 +118,43 @@
       text-transform: uppercase;
       padding: 5px 14px;
       border-radius: 2px;
-      margin-bottom: 24px;
-      width: fit-content;
+      margin-bottom: 22px;
     }
     .hero-h {
-      font-size: clamp(28px, 3.6vw, 54px);
+      font-size: clamp(30px, 4.5vw, 58px);
       font-weight: 800;
       color: #fff;
       line-height: 1.08;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       letter-spacing: -0.02em;
     }
     .hero-h .hl { color: var(--teal); }
     .hero-p {
       font-size: 16px;
-      color: rgba(255,255,255,0.65);
+      color: rgba(255,255,255,0.68);
       line-height: 1.78;
-      margin-bottom: 34px;
+      margin-bottom: 30px;
       font-weight: 300;
+      max-width: 480px;
     }
-    /* primary CTA — goes to main site */
-    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
+    .hero-btns { display: flex; gap: 10px; flex-wrap: wrap; }
     .btn-teal {
-      display: inline-flex; align-items: center; gap: 7px;
+      display: inline-flex; align-items: center; gap: 6px;
       background: var(--teal); color: #fff; font-weight: 700; font-size: 14px;
-      padding: 14px 32px; border-radius: 3px;
+      padding: 12px 22px; border-radius: 3px;
       transition: background 0.2s, transform 0.15s;
+      white-space: nowrap;
     }
     .btn-teal:hover { background: var(--teal2); transform: translateY(-2px); }
     .btn-ghost-dark {
-      display: inline-flex; align-items: center; gap: 7px;
-      background: transparent; color: rgba(255,255,255,0.8); font-weight: 600; font-size: 14px;
-      padding: 14px 32px; border-radius: 3px;
-      border: 2px solid rgba(255,255,255,0.2);
+      display: inline-flex; align-items: center; gap: 6px;
+      background: transparent; color: rgba(255,255,255,0.85); font-weight: 600; font-size: 14px;
+      padding: 12px 22px; border-radius: 3px;
+      border: 2px solid rgba(255,255,255,0.25);
       transition: border-color 0.2s, color 0.2s;
+      white-space: nowrap;
     }
     .btn-ghost-dark:hover { border-color: var(--teal); color: var(--teal); }
-    /* quick site links */
-    .hero-links {
-      display: flex;
-      flex-direction: column;
-      gap: 0;
-      border-top: 1px solid rgba(255,255,255,0.1);
-      padding-top: 28px;
-    }
-    .hero-link-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 13px 0;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
-      text-decoration: none;
-      transition: color 0.2s;
-      color: rgba(255,255,255,0.55);
-      font-size: 14px;
-      font-weight: 500;
-    }
-    .hero-link-row:hover { color: var(--teal); }
-    .hero-link-row:hover .hero-link-arrow { color: var(--teal); }
-    .hero-link-label { display: flex; align-items: center; gap: 10px; }
-    .hero-link-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--teal); flex-shrink: 0; }
-    .hero-link-arrow { color: rgba(255,255,255,0.25); font-size: 16px; transition: color 0.2s; }
-
-    /* RIGHT — lab image panel */
-    .hero-img-panel {
-      position: relative;
-      overflow: hidden;
-      min-height: 480px;
-    }
-    .hero-img-panel img {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center;
-    }
-    /* subtle fade on left edge so it blends with text panel */
-    .hero-img-panel::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(90deg, rgba(17,24,32,0.5) 0%, transparent 40%);
-      z-index: 1;
-    }
-    .hero-trust-row {
-      display: flex; gap: 20px; flex-wrap: wrap;
-      margin-bottom: 28px;
-    }
-    .htrust-item {
-      font-size: 12px; font-weight: 700;
-      color: rgba(255,255,255,0.5);
-      letter-spacing: 0.04em;
-    }
 
     /* ── FEATURE STRIP ────────────────────────────────── */
     .feature-strip {
@@ -493,9 +448,8 @@
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
       .nav-links { display: none; }
       .nav-mobile-btn { display: block; }
-.hero { grid-template-columns: 1fr; }
-      .hero-img-panel { min-height: 320px; }
-      .hero-text-panel { padding: 52px 5vw; }
+.hero { min-height: 60vh; }
+      .hero-inner { padding: 60px 5vw; }
       .feat-item { padding: 8px 18px; }
     }
     @media (max-width: 540px) {
@@ -545,49 +499,17 @@
 
 <!-- ══ HERO ══════════════════════════════════════════ -->
 <section class="hero">
-
-  <!-- LEFT: text + site links -->
-  <div class="hero-text-panel">
-    <div class="hero-badge">High-Quality · 99% Pure · 3rd Party Tested</div>
-    <h1 class="hero-h">The <span class="hl">Highest Purity</span><br>Peptides on<br>the Market</h1>
-    <p class="hero-p">Independently verified research compounds with full COA documentation, fast US shipping, and support that actually knows the science.</p>
-    <div class="hero-btns">
-      <a href="https://thortides.com/shop/" target="_blank" class="btn-teal">Shop All Peptides →</a>
-      <a href="https://thortides.com" target="_blank" class="btn-ghost-dark">Visit Website</a>
-    </div>
-    <!-- Quick links to main site pages — priority navigation -->
-    <div class="hero-links">
-      <a href="https://thortides.com/shop/" target="_blank" class="hero-link-row">
-        <span class="hero-link-label"><span class="hero-link-dot"></span>Browse Full Product Catalog</span>
-        <span class="hero-link-arrow">→</span>
-      </a>
-      <a href="https://thortides.com/product/semaglutide/" target="_blank" class="hero-link-row">
-        <span class="hero-link-label"><span class="hero-link-dot"></span>Semaglutide 10mg</span>
-        <span class="hero-link-arrow">→</span>
-      </a>
-      <a href="https://thortides.com/product/retatrutide-10mg-2/" target="_blank" class="hero-link-row">
-        <span class="hero-link-label"><span class="hero-link-dot"></span>Retatrutide 10mg</span>
-        <span class="hero-link-arrow">→</span>
-      </a>
-      <a href="https://thortides.com/product/bpc157-tb500-5mg-5mg-2/" target="_blank" class="hero-link-row">
-        <span class="hero-link-label"><span class="hero-link-dot"></span>BPC-157 / TB-500</span>
-        <span class="hero-link-arrow">→</span>
-      </a>
-      <a href="https://thortides.com/contact-us-2/" target="_blank" class="hero-link-row">
-        <span class="hero-link-label"><span class="hero-link-dot"></span>Contact Our Team</span>
-        <span class="hero-link-arrow">→</span>
-      </a>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-badge">High-Quality · 99% Pure · 3rd Party Tested</div>
+      <h1 class="hero-h">The <span class="hl">Highest Purity</span><br>Peptides on the Market</h1>
+      <p class="hero-p">Independently verified research compounds with full COA documentation, fast US shipping, and support that actually knows the science.</p>
+      <div class="hero-btns">
+        <a href="https://thortides.com/shop/" target="_blank" class="btn-teal">Shop Now →</a>
+        <a href="https://thortides.com" target="_blank" class="btn-ghost-dark">Visit Website</a>
+      </div>
     </div>
   </div>
-
-  <!-- RIGHT: clean lab image — no products, no text -->
-  <div class="hero-img-panel">
-    <img
-      src="https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&q=85&fit=crop"
-      alt="Research laboratory"
-      onerror="this.src='https://images.unsplash.com/photo-1576086213369-97a306d36557?w=1200&q=85&fit=crop'"/>
-  </div>
-
 </section>
 
 <!-- ══ FEATURE STRIP ════════════════════════════════ -->
