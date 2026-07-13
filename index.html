@@ -84,27 +84,12 @@
     .nav-mobile-btn { display: none; background: var(--teal); color: #fff; padding: 8px 16px; border-radius: 3px; font-size: 13px; font-weight: 700; }
 
     /* ── HERO ─────────────────────────────────────────── */
-    .hero {
-      position: relative;
+    .hero-top {
       background: var(--navy);
-      overflow: hidden;
+      padding: 52px 7vw 48px;
+      text-align: center;
     }
-    .hero-img {
-      width: 100%;
-      display: block;
-      max-height: 580px;
-      object-fit: cover;
-      object-position: center top;
-    }
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to right, rgba(17,24,32,0.82) 0%, rgba(17,24,32,0.5) 55%, rgba(17,24,32,0.1) 100%);
-      display: flex;
-      align-items: center;
-      padding: 0 7vw;
-    }
-    .hero-text { max-width: 560px; }
+    .hero-top-inner { max-width: 720px; margin: 0 auto; }
     .hero-badge {
       display: inline-block;
       background: var(--teal);
@@ -115,26 +100,28 @@
       text-transform: uppercase;
       padding: 5px 14px;
       border-radius: 2px;
-      margin-bottom: 22px;
+      margin-bottom: 20px;
     }
     .hero-h {
       font-size: clamp(30px, 4.5vw, 58px);
       font-weight: 800;
       color: #fff;
       line-height: 1.1;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       letter-spacing: -0.02em;
     }
     .hero-h .hl { color: var(--teal); }
     .hero-p {
       font-size: clamp(14px, 1.3vw, 16px);
-      color: rgba(255,255,255,0.75);
+      color: rgba(255,255,255,0.7);
       line-height: 1.75;
-      margin-bottom: 32px;
+      margin-bottom: 30px;
       font-weight: 300;
-      max-width: 460px;
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; }
     .btn-teal {
       display: inline-flex; align-items: center; gap: 7px;
       background: var(--teal); color: #fff; font-weight: 700; font-size: 14px;
@@ -142,17 +129,26 @@
       transition: background 0.2s, transform 0.15s;
     }
     .btn-teal:hover { background: var(--teal2); transform: translateY(-2px); }
-    .btn-ghost {
+    .btn-ghost-dark {
       display: inline-flex; align-items: center; gap: 7px;
       background: transparent; color: #fff; font-weight: 600; font-size: 14px;
       padding: 13px 30px; border-radius: 3px;
-      border: 2px solid rgba(255,255,255,0.35);
+      border: 2px solid rgba(255,255,255,0.3);
       transition: border-color 0.2s, color 0.2s;
     }
-    .btn-ghost:hover { border-color: var(--teal); color: var(--teal); }
+    .btn-ghost-dark:hover { border-color: var(--teal); color: var(--teal); }
 
-    /* hero no-image fallback */
-    .hero-fallback { padding: 90px 7vw 80px; }
+    .hero-banner-wrap {
+      background: var(--navy);
+      line-height: 0;
+    }
+    .hero-banner-wrap img {
+      width: 100%;
+      display: block;
+      max-height: 520px;
+      object-fit: cover;
+      object-position: center;
+    }
 
     /* ── FEATURE STRIP ────────────────────────────────── */
     .feature-strip {
@@ -446,8 +442,7 @@
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
       .nav-links { display: none; }
       .nav-mobile-btn { display: block; }
-      .hero-overlay { position: relative; background: var(--dark); padding: 60px 5vw 56px; }
-      .hero-img { display: none; }
+.hero-banner-wrap img { max-height: 280px; }
       .feat-item { padding: 8px 18px; }
     }
     @media (max-width: 540px) {
@@ -496,24 +491,23 @@
 </nav>
 
 <!-- ══ HERO ══════════════════════════════════════════ -->
-<section class="hero">
-  <img
-    class="hero-img"
-    src="https://thortides.com/wp-content/uploads/2026/05/Website-banner-final.png"
-    alt="Thortides High Purity Peptides"
-    onerror="this.style.display='none'"/>
-  <div class="hero-overlay">
-    <div class="hero-text">
-      <div class="hero-badge">High-Quality · 99% Pure · 3rd Party Tested</div>
-      <h1 class="hero-h">The <span class="hl">Highest Purity</span><br>Peptides on the Market</h1>
-      <p class="hero-p">Independently verified research compounds with full COA documentation, fast US shipping, and customer support that actually knows the science.</p>
-      <div class="hero-btns">
-        <a href="https://thortides.com/shop/" target="_blank" class="btn-teal">Shop All Peptides →</a>
-        <a href="#why" class="btn-ghost">Our Standards</a>
-      </div>
+<section class="hero-top">
+  <div class="hero-top-inner">
+    <div class="hero-badge">High-Quality · 99% Pure · 3rd Party Tested</div>
+    <h1 class="hero-h">The <span class="hl">Highest Purity</span><br>Peptides on the Market</h1>
+    <p class="hero-p">Independently verified research compounds with full COA documentation, fast US shipping, and customer support that actually knows the science.</p>
+    <div class="hero-btns">
+      <a href="https://thortides.com/shop/" target="_blank" class="btn-teal">Shop All Peptides →</a>
+      <a href="#why" class="btn-ghost-dark">Our Standards</a>
     </div>
   </div>
 </section>
+<div class="hero-banner-wrap">
+  <img
+    src="https://thortides.com/wp-content/uploads/2026/05/Website-banner-final.png"
+    alt="Thortides — Limited Time Sale"
+    onerror="this.style.display='none'"/>
+</div>
 
 <!-- ══ FEATURE STRIP ════════════════════════════════ -->
 <div class="feature-strip">
